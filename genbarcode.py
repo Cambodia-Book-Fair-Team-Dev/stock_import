@@ -33,7 +33,7 @@ def generate_barcode_with_name_and_code(item_name, item_code, output_dir, font_p
         barcode_class = barcode.get_barcode_class('code128')
         barcode_obj = barcode_class(item_code, writer=ImageWriter())
         barcode_image_path = os.path.join(
-            output_dir, f"{item_code}_barcode.png")
+            output_dir, f"{item_code}_{item_name}")
         barcode_obj.save(barcode_image_path)
 
         # Load the generated barcode image
